@@ -1,7 +1,7 @@
 # StudyPack
 ## 👥 Integrantes
 - Victor Hugo Borba
-- Julia Forny Muniz
+- Julia Forny de Souza Muniz
 - Eduardo Gomes De Moura
 - Bruno Luis Machado
 - Carlos Eduardo Borba
