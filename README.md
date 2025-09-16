@@ -1,6 +1,6 @@
 # StudyPack
 ## 👥 Integrantes
-- Victor Hugo Borba
+- Victor Hugo Borba Bento
 - Julia Forny de Souza Muniz
 - Eduardo Gomes De Moura
 - Bruno Luis Machado
