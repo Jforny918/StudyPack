@@ -1,0 +1,236 @@
+/* GERAL */
+
+:root {
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --nav-h: 140px
+}
+
+body { 
+  padding-top: var(--nav-h);
+  font-family: var(--font-sans); 
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* NAVBAR */
+
+nav{
+    height: var(--nav-h);
+    top: 0;
+    width: 100%;
+    background-color: #4682b4;
+    padding: 2.5%;
+    display: flex;
+    z-index: 1000;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.logo-branca{
+    width: 80px;
+    
+}
+
+.left-nav{
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.right-nav{
+    align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+.a-nav{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    margin: 6px;
+}
+
+i{
+    margin: 10px;
+    color: white;
+}
+
+/* PAINEL */
+
+.painel{
+    min-height: 86vh;
+    width: 100%;
+    background-image: url("../assets/painel-background.png");
+    background-size: 100%;
+    display: grid;
+}
+
+.left-container{
+    height: 100%;
+    width: 35%;
+    background-color: rgba(70, 130, 180, .15);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-left-container{
+    width: 35%;
+    align-items: center;
+    display: block;
+}
+
+.content-left-container h1{
+    font-size: 50px;
+    color: #FFF;
+    text-shadow: 0 2px 4px rgba(0,0,0,.35),
+    0 6px 18px rgba(0,0,0,.35);
+}
+
+.content-left-container p{
+    font-size: 20px;
+    color: #FFF;
+    margin: 20px 0 20px 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,.35);
+}
+
+.saiba-mais{
+    border: 1px solid;
+    border-color: #03243f;
+    padding: 10px;
+    color: #03243f;
+    background-color: rgba(248, 245, 245, 0.384);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* PRIMEIRA FAIXA */
+
+.faixa-1{
+    min-height: 45vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 30px 0;
+}
+
+.content-faixa-1{
+    height: auto;
+    width: 45%;
+}
+
+.content-faixa-1 h1{
+    color: #03243f;
+}
+
+.content-faixa-1 p{
+    font-weight: lighter;
+    margin: 30px 0 30px 0;
+    color: #4682b4;
+    line-height: 1.6;
+}
+
+.saiba-mais-2{
+    border: 1px solid;
+    border-color: #0d3b61;
+    padding: 10px 50px 10px 50px;
+    color: #0d3b61;
+    background-color: rgba(248, 245, 245, 0.384);
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+/* SEGUNDA FAIXA */
+
+.faixa-2{
+    min-height: 45vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 10px 0;
+}
+
+.content-faixa-2 h1{
+    color: #03243f;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+}
+
+.content-faixa-2 h3{
+    color: #03243f;
+    font-size: 25px;
+    text-align: center;
+}
+
+.content-faixa-2 p{
+    text-align: center;
+    color: #4682b4;
+    margin: 30px 0 30px 0;
+    font-weight: 500;
+}
+
+.content-personalizado-2 label{
+    color: green;    
+}
+
+.email-input{
+    width: 70%;
+    padding: 8px;
+    border: solid 1px;
+    border-color: #4682b4;
+}
+
+.button-cadastrar{
+    padding: 9px;
+    width: 120px;
+    background-color: #4682b4;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* TERCEIRA FAIXA */
+
+.faixa-3{
+    min-height: 45vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 50px 0;
+    background-color: #4682b4;
+}
+
+.content-faixa-3{
+    color: #03243f;
+    text-align: center;
+    display: flex;
+}
+
+.content-faixa-3 h3{
+    font-size: 30px;
+}
+
+.circulo{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin: 30px 30px 0 30px;
+    padding: 0 10px 0 10px;
+    border: solid 4px #0d3b61;
+    font-weight: 500;
+}
