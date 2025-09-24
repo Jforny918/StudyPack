@@ -7,6 +7,11 @@
 :root{
      --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
      --panel-w: clamp(320px, 28vw, 440px);
+     --font-family: 'Poppins', sans-serif;
+     --primary-color: #0A659D;
+     --secondary-color: #1290DE;
+     --terceary-color: #F7F9F8;
+     --quarternary-color: #e7e7e7;
 }
 
 body{
@@ -58,7 +63,7 @@ label{
 
 label a{
     text-decoration: none;
-    color: #11518a;
+    color: var(--secondary-color);
 }
 
 .provisory{
@@ -70,7 +75,7 @@ label a{
 }
 
 h1, h4{
-    color: #1C2A44;
+    color: var(--primary-color);
 }
 
 h1{
@@ -81,10 +86,10 @@ h1{
 .preencher{
     width: 100%;
     background: transparent;
-    color: #0b2a44;
+    color: var(--secondary-color);
     border: none;
     outline: none;
-    border-bottom: 2px solid #1C2A44;
+    border-bottom: 2px solid var(--secondary-color);
     padding: 10px 0;
     font-size: 15px;
     transition: 
@@ -94,14 +99,14 @@ h1{
 }
 
 .preencher:focus{
-    border-bottom-color: #0e375a;
-    box-shadow: 0 2px 0 0 #0e375a;
+    border-bottom-color: var(--secondary-color);
+    box-shadow: 0 2px 0 0 var(--secondary-color);
 }
 
 .botao-enviar{
     width: 100%;
     height: 40px;
-    background-color: #1C2A44;
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 6px;
