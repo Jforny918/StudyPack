@@ -1,11 +1,13 @@
 <?php
-    $servidor="localhost";
-    $usuario="root";
-    $senha= "";
-    $bdprincipal= "studypack";
+$host = "localhost";
+$usuario = "root";
+$senha = ""; 
+$banconome = "studypackpess";
+$port = 3307;
 
-    $conexao = mysqli_connect($servidor, $usuario, $senha, $bdprincipal);
-    if(!$conexao){
-        die("Deu probrema patrão, se liga ai-->" . mysqli_connect_error());
-    } 
+$conexao = mysqli_connect($host, $user, $password, $dbname, $port);
+
+if (!$conn) {
+    die("Deu coiso se liga ->: " . mysqli_connect_error());
+}
 ?>
