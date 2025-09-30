@@ -2,12 +2,11 @@
 $host = "localhost";
 $usuario = "root";
 $senha = ""; 
-$banconome = "studypackpess";
-$port = 3307;
+$banconome = "studyPack";
 
-$conexao = mysqli_connect($host, $user, $password, $dbname, $port);
+$conexao = mysqli_connect($host, $usuario, $senha, $banconome);
 
-if (!$conn) {
+if (!$conexao) {
     die("Deu coiso se liga ->: " . mysqli_connect_error());
 }
 ?>
