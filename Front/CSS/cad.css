@@ -63,6 +63,26 @@ form{
     gap: 0.01px;
 }
 
+.form-content{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-content a{
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-content.error a{
+    color: #e74c3c;
+    bottom: -16px;
+    font-size: 12px;
+    visibility: visible;
+    font-weight: bold;
+}
+
 h1, h4{
     color: var(--primary-color);
 }
