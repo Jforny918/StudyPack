@@ -7,30 +7,58 @@
     <title>Dúvidas</title>
 </head>
 <body>
+    <header> 
+        <img src = "../assets/grupoestudantes.jpg" alt = "foto de estudantes animados" class = "banner">
+    </header>
 <main>
-    <section class="painel"></section>
-    <section class="first-sec">
-        <div class="duvidas-container">
-            <h1>Dúvidas</h1>
-        <input type="text">Pesquisar dúvidas...
-            <ul class="duvidas-lista">
-                <li>O que é uma mochila de erros?</li>
-                <li>Quais as funcionalidades de Mochila de Erros do StudyPack?</li>
-                <li>Posso acessar minha Mochilachila de Erros em diferentes dispositivos?</li>
-                <li>Como adiciono uma questão à Mochila de Erros</li>
-                <li>O StudyPack é gratuito para usar?</li>
-            </ul>
-        </div>
+    <section class = "faq-section">
+        <h1 class = "titulo"> Dúvidas</h1> 
+        <input type="text" class="faq-search" placeholder="Pesquisar dúvidas...">
+
+        <section class="faq-list">
+  <details class="faq-item">
+    <summary>O que é uma Mochila de Erros?</summary>
+    <div class="faq-response">
+      Mochila de Erros é um recurso que permite salvar e consultar questões em que o estudante errou para revisar depois.
+    </div>
+  </details>
+  <details class="faq-item">
+    <summary>Quais as funcionalidades da Mochila de Erros do StudyPack?</summary>
+    <div class="faq-response">
+      Permite adicionar, consultar, revisar estatísticas de acertos/erros, acessar dicas, etc.
+    </div>
+  </details>
+  <details class="faq-item">
+    <summary>Posso acessar minha Mochila de Erros em diferentes dispositivos?</summary>
+    <div class="faq-response">
+      Sim, desde que faça login com sua conta em qualquer dispositivo compatível.
+    </div>
+  </details>
+  <details class="faq-item">
+    <summary>Como adiciono uma questão à Mochila de Erros?</summary>
+    <div class="faq-response">
+      Ao errar uma questão, clique em "Salvar na Mochila" ou utilize o botão específico da plataforma.
+    </div>
+  </details>
+  <details class="faq-item">
+    <summary>O StudyPack é gratuito para usar?</summary>
+    <div class="faq-response">
+      Existem recursos gratuitos e pagos na plataforma. Consulte sempre o plano disponível.
+    </div>
+  </details>
+</section>
+
     </section>
-    <section class="second-sec">
-        <div class="sec-content">
-            <h1>Entre em contato</h1>
-            <input type="text" name="Nome" placeholder="Assunto" id="nome">
-            <input type="email" name="Email" placeholder="Assunto" id="email">
-            <input type="text" name="Assunto" placeholder="Assunto" id="assunto">
-            <textarea placeholder="Escreva sua dúvida aqui..."></textarea>
-            <button>Enviar</button>
-        </div>
+   
+    <section class = "contato-section">
+        <h2 class = "titulo"> Entre em contato </h2>
+        <form class = "contato-form">
+            <input type = "text" placeholder = "Nome" required>
+            <input type = "email" placeholder = "Email" required>
+            <input type = "text" placeholder = "Assunto" required>
+            <textarea placeholder = "Mensagem" required></textarea>
+            <button type = "submit"> Enviar </button>
+        </form>
     </section>
 </main>
 </body>
