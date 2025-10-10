@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="../CSS/cad.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="../JS/cadastro.js" defer></script>
+</head>
+<body>
+    <section class="left">
+      <div class="content">
+        <div class="log-up">
+            <h1>Cadastre-se</h1>
+            <h4>Entre em um novo mundo <br>
+                de aprendizado com a Study Pack!
+            </h4>
+        </div>
+        <div class="log-down">
+          <form action="" id="form">
+            <div class="form-content">
+              <input type="text" id="username" class="preencher" placeholder="Nome Completo *"> <br>
+              <a>Aqui vai a mensagem de erro...</a>
+            </div>
+            <div class="form-content">
+              <input type="email" id="email" class="preencher" placeholder="Email *"> <br>
+              <a>Aqui vai a mensagem de erro...</a>
+            </div>
+            <div class="form-content">
+              <input type="password" id="password" class="preencher" placeholder="Senha *"> <br>
+              <a>Aqui vai a mensagem de erro...</a>
+            </div>
+            <div class="form-content">
+              <input type="password" id="password-confirmation" class="preencher" placeholder="Confirmar Senha *"> <br>
+              <a>Aqui vai a mensagem de erro...</a>
+            </div>
+            <div class="form-content">
+              <input type="tel" id="telefone" class="preencher" placeholder="Telefone"> <br>
+              <a>Aqui vai a mensagem de erro...</a>
+            </div>
+            <div class="form-content">
+              <label class="data_nasc" id="date" for="">Data de Nascimento:</label>
+              <input type="date" class="preencher"> <br>
+              <a>Aqui vai a mensagem de erro...</a>
+            </div>
+              <fieldset class="sexo-fieldset">
+                <legend class="sexo-legend"> Gênero *:
+                  <div class="sexo-segmented">
+                    <div class="option">
+                      <input type="radio" name="sexo" id="sexo-f" value="feminino" checked>
+                      <label for="sexo-f">Feminino</label>
+                    </div>
+                    <div class="option">
+                      <input type="radio" name="sexo" id="sexo-m" value="masculino" checked>
+                      <label for="sexo-m">Masculino</label>
+                    </div>
+                    <div class="option">
+                      <input type="radio" name="sexo" id="sexo-n" value="nao-informar" checked>
+                      <label for="sexo-f">Prefiro não informar</label>
+                    </div>
+                  </div>
+                </legend>
+              </fieldset>
+            <input type="submit" value="Cadastrar-se" class="botao-enviar" name="cadastro">
+          </form>
+          <div class="provisory">
+            <h4>Continuar com Google</h4>
+            <i class="fa-brands fa-google"></i>
+          </div>
+        </div>  
+      </div>
+    </section>
+    <section class="right"></section>
+</body>
+</html>
