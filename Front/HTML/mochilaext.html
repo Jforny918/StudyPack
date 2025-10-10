@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochila de Erros</title>
+  <link rel = "stylesheet" href = "../CSS/mochilaext.css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mochilas com Menu Lateral</title>
+<style>
+  
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="sidebar">
+    <h2>Mochilas</h2>
+    <div class="mochilas-list" id="mochilas-list">
+      <div class="mochila-item active" data-id="1">Mochila 1</div>
+      <div class="mochila-item" data-id="2">Mochila 2</div>
+      <div class="mochila-item" data-id="3">Mochila 3</div>
+    </div>
+    <button class="btn-new-mochila">Criar Nova Mochila</button>
+  </nav>
+  <main class="mochila-area" id="mochila-area">
+    <div class="mochila-header">
+      <button class="btn" id="btn-nova-questao">Criar Nova Questão</button>
+      <button class="btn">Exercitar</button>
+    </div>
+    <div class="questoes-list" id="questoes-list">
+    </div>
+  </main>
+</div>
+<!-- Modal para nova questão -->
+<div class="modal" id="modal-nova-questao">
+  <div class="modal-content">
+    <h3>Criar Nova Questão</h3>
+    <label for="enunciado">Enunciado:</label>
+    <textarea id="enunciado" rows="3"></textarea>
+
+    <label for="imagem">Inserir imagem:</label>
+    <input type="file" id="imagem" accept="image/*" />
+
+    <label for="alternativas">Alternativas (separar por linha):</label>
+    <textarea id="alternativas" rows="4" placeholder="Ex: A) ...&#10;B) ...&#10;C) ..."></textarea>
+
+    <label for="resposta">Resposta discursiva:</label>
+    <textarea id="resposta" rows="3"></textarea>
+
+    <div class="modal-buttons">
+      <button class="btn btn-cancel" id="btn-cancel">Cancelar</button>
+      <button class="btn" id="btn-salvar">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal-nova-questao');
+  const btnNovaQuestao = document.getElementById('btn-nova-questao');
+  const btnCancelar = document.getElementById('btn-cancel');
+  const btnSalvar = document.getElementById('btn-salvar');
+  const questoesList = document.getElementById('questoes-list');
+
+  btnNovaQuestao.addEventListener('click', () => {
+    modal.classList.add('active');
+  });
+
+  btnCancelar.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  btnSalvar.addEventListener('click', () => {
+    const enunciado = document.getElementById('enunciado').value.trim();
+    if (!enunciado) {
+      alert('Por favor, preencha o enunciado da questão.');
+      return;
+    }
+
+    // Criar uma nova div de questão com o enunciado
+    const novaQuestao = document.createElement('div');
+    novaQuestao.classList.add('questao');
+    novaQuestao.textContent = `Questão: ${enunciado}`;
+    questoesList.appendChild(novaQuestao);
+
+    // Resetar campos e fechar modal
+    document.getElementById('enunciado').value = '';
+    document.getElementById('alternativas').value = '';
+    document.getElementById('resposta').value = '';
+    document.getElementById('imagem').value = '';
+    modal.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
