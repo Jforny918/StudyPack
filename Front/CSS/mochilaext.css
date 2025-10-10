@@ -1,0 +1,175 @@
+/* Estilo geral */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ddd;
+  }
+
+  /* Container geral com menu lateral e conteúdo */
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+
+  /* Menu lateral */
+  .sidebar {
+    background-color: #1f2937; /* cinza escuro azulado */
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .sidebar h2 {
+    color: #3b82f6; /* azul */
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  /* Lista de mochilas */
+  .mochilas-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+  }
+
+  .mochila-item {
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    background: #374151;
+    transition: background-color 0.3s;
+  }
+
+  .mochila-item:hover, .mochila-item.active {
+    background-color: #3b82f6;
+    color: #fff;
+  }
+
+  /* Botão criar nova mochila */
+  .btn-new-mochila {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+  }
+
+  .btn-new-mochila:hover {
+    background-color: #2563eb;
+  }
+
+  /* Área da mochila: bloco de notas com questões */
+  .mochila-area {
+    flex-grow: 1;
+    background-color: #181a1f;
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mochila-header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    background-color: #3b82f6;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #2563eb;
+  }
+
+  /* Questões no formato bloco de notas */
+  .questao {
+    background-color: #2d2f36;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    color: #ccc;
+  }
+
+  /* Modal para nova questão */
+  .modal {
+    display: none; /* escondido por padrão */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background:#23272a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 400px;
+    color: #ddd;
+  }
+
+  .modal-content h3 {
+    margin-top: 0;
+    color: #3b82f6;
+  }
+
+  .modal-content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+
+  .modal-content textarea,
+  .modal-content input[type="text"],
+  .modal-content input[type="file"] {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background: #333842;
+    color: #eee;
+    resize: vertical;
+  }
+
+  .modal-content input[type="file"] {
+    padding: 0.2rem;
+  }
+
+  .modal-content .alternativas {
+    margin-top: 0.3rem;
+  }
+
+  .modal-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .btn-cancel {
+    background: #555;
+  }
