@@ -1,0 +1,24 @@
+body {
+  background: #121212;
+  color: #ddd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+.btn-voltar {
+  background-color: #3b82f6;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.questao-display {
+  background: #2d2f36;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.alternativas {
+  margin-top: 1rem;
+}

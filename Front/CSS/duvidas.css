@@ -1,45 +1,44 @@
 body {
-    background: #f7f7f7;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 header {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-
+  width: 100%;
+  text-align: center;
+  padding: 0;
 }
 .banner {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }
 main {
-    max-width: 700px;
-    margin: 0 auto;
-    background: transparent;
-    padding: 32px 16px;
-    margin-top: -50px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: transparent;
+  padding: 32px 16px;
+  margin-top: -50px;
 }
 .titulo {
-    text-align: center;
-    color: #18426a;
-    margin-bottom: 22px;
-    padding: 30px 0 10px 0;
+  text-align: center;
+  color: #18426a;
+  margin-bottom: 22px;
+  padding: 30px 0 10px 0;
 }
 .faq-section,
 .contato-section {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .faq-search {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 18px; /* Espaçamento entre o campo de busca e a lista de perguntas */
-    border-radius: 7px;
-    border: 1px solid #d9d9d9;
-    font-size: 15px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px; /* Espaçamento entre o campo de busca e a lista de perguntas */
+  border-radius: 7px;
+  border: 1px solid #d9d9d9;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 .faq-list {
   display: flex;
@@ -48,48 +47,48 @@ main {
   margin-top: 20px;
 }
 .faq-question {
-    padding: 13px 16px;
-    background: #f3f5f7;
-    border: 1px solid #d9d9d9;
-    border-radius: 7px;
-    text-align: left;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.2s;
+  padding: 13px 16px;
+  background: #f3f5f7;
+  border: 1px solid #d9d9d9;
+  border-radius: 7px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 .faq-question:hover {
-    background: #e9eef2;
+  background: #e9eef2;
 }
 .contato-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
 }
 .contato-form input,
 .contato-form textarea {
-    padding: 10px;
-    border-radius: 7px;
-    border: 1px solid #d9d9d9;
-    font-size: 15px;
-    resize: none;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid #d9d9d9;
+  font-size: 15px;
+  resize: none;
 }
 .contato-form textarea {
-    min-height: 70px;
+  min-height: 70px;
 }
 .contato-form button {
-    padding: 12px;
-    background: #18426a;
-    color: #fff;
-    border: none;
-    border-radius: 7px;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background .2s;
+  padding: 12px;
+  background: #18426a;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 .contato-form button:hover {
-    background: #07213b;
+  background: #07213b;
 }
 .faq-item {
   border: 1px solid #d9d9d9;
@@ -120,7 +119,12 @@ main {
   color: #26334d;
   margin-top: -4px;
 }
-@media (max-width:600px) {
-  .faq-list { gap: 10px; }
-  .faq-item summary, .faq-item .faq-response { padding: 12px; }
+@media (max-width: 600px) {
+  .faq-list {
+    gap: 10px;
+  }
+  .faq-item summary,
+  .faq-item .faq-response {
+    padding: 12px;
+  }
 }

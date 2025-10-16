@@ -1,7 +1,7 @@
 /* Estilo geral */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
   color: #ddd;
 }
@@ -20,12 +20,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  transition: width 0.3s ease;
-  overflow: hidden;
-}
-
-.sidebar.collapsed {
-  width: 60px;
 }
 
 .sidebar h2 {
@@ -34,10 +28,17 @@ body {
   font-weight: bold;
 }
 
-.sidebar.collapsed h2,
-.sidebar.collapsed .mochilas-list div,
-.sidebar.collapsed .btn-new-mochila {
-  display: none; /* Esconde textos e lista, deixa só ícones (se tiver) */
+.container.collapsed .sidebar {
+  width: 60px;
+}
+.container.collapsed .sidebar h2,
+.container.collapsed .mochila-item,
+.container.collapsed #btn-nova-mochila {
+  display: none;
+}
+.container.collapsed .mochila-area {
+  flex-grow: 1;
+  padding-left: 1rem;
 }
 
 /* Lista de mochilas */
@@ -56,35 +57,27 @@ body {
   transition: background-color 0.3s;
 }
 
-.mochila-item:hover, .mochila-item.active {
+.mochila-item:hover,
+.mochila-item.active {
   background-color: #3b82f6;
   color: #fff;
 }
 
-/* Botão criar nova mochila - botão principal */
-.btn-new-mochila {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
+/* Botão criar nova mochila */
+#btn-nova-mochila {
+  background-color: #3b82f6;
   color: white;
-  font-weight: 700;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
   align-self: flex-end;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s;
 }
 
 .btn-new-mochila:hover {
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  
-  transform: translateY(-2px);
-}
-
-.btn-new-mochila:active {
-  background: linear-gradient(135deg, #1e40af, #2563eb);
-  
-  transform: translateY(0);
+  background-color: #0954f6;
 }
 
 /* Área da mochila: bloco de notas com questões */
@@ -104,51 +97,19 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Botões gerais usados nos modais e áreas */
 .btn {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  background-color: #3b82f6;
   border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   color: white;
-  font-weight: 700;
   cursor: pointer;
-  
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  background: linear-gradient(135deg, #1e40af, #2563eb);
-  
-  transform: translateY(0);
-}
-
-/* Botão cancelar com estilo neutro */
-.btn-cancel {
-  background: #444c56;
-  color: #ddd;
-  border-radius: 8px;
-  padding: 0.7rem 1.5rem;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-}
-
-.btn-cancel:hover {
-  background-color: #5a6574;
-  transform: translateY(-1px);
-}
-
-.btn-cancel:active {
-  background-color: #3b4252;
-  transform: translateY(0);
+  background-color: #2563eb;
 }
 
 /* Questões no formato bloco de notas */
@@ -161,12 +122,15 @@ body {
   color: #ccc;
 }
 
-/* Modal para nova questão e mochila */
+/* Modal para nova questão */
 .modal {
   display: none; /* escondido por padrão */
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -177,7 +141,7 @@ body {
 }
 
 .modal-content {
-  background:#23272a;
+  background: #23272a;
   border-radius: 10px;
   padding: 1.5rem;
   width: 400px;
@@ -197,8 +161,7 @@ body {
 
 .modal-content textarea,
 .modal-content input[type="text"],
-.modal-content input[type="file"],
-.modal-content input[type="color"] {
+.modal-content input[type="file"] {
   width: 100%;
   margin-top: 0.3rem;
   padding: 0.5rem;
@@ -224,12 +187,6 @@ body {
   gap: 1rem;
 }
 
-#btn-toggle-sidebar {
-  background: linear-gradient(135deg, hsl(217, 91%, 60%), #2563eb);
-  border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  color: white;
-  font-weight: 700;
+.btn-cancel-questao, .btn-cancel-mochila {
+  background: #555;
 }
-

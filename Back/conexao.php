@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $usuario = "root";
-$senha = ""; 
+$senha = "";
 $banconome = "studypack";
 
 $conexao = mysqli_connect($host, $usuario, $senha, $banconome);
@@ -9,5 +9,5 @@ $conexao = mysqli_connect($host, $usuario, $senha, $banconome);
 if (!$conexao) {
     die("Deu coiso se liga ->: " . mysqli_connect_error());
 }
-echo"deu bom chefe";
+echo "deu bom chefe";
 ?>
