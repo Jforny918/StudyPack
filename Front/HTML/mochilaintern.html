@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochila de Erros</title>
+  <link rel = "stylesheet" href = "../CSS/mochilaext.css">
+<body>
+<div class="container">
+  <nav class="sidebar">
+
+    <button id="btn-toggle-sidebar">☰</button>
+    
+    <h2>Mochilas</h2>
+    <div class="mochilas-list" id="mochilas-list">
+      <div class="mochila-item" data-id="1">Mochila 1</div>
+    </div>
+    <button id="btn-nova-mochila" class="btn-new-mochila">Nova Mochila</button>
+  </nav>
+  <main class="mochila-area" id="mochila-area">
+    <div class="mochila-header">
+      <button class="btn" id="btn-nova-questao">Nova Questão</button>
+      <button class="btn">Exercitar</button>
+    </div>
+    <div class="questoes-list" id="questoes-list"></div>
+        </section>
+    </div>
+  </main>
+</div>
+<!-- Modal para nova questão -->
+<div class="modal" id="modal-nova-questao">
+  <div class="modal-content">
+    <h3>Criar Nova Questão</h3>
+    <label for="enunciado">Enunciado:</label>
+    <textarea id="enunciado" rows="3"></textarea>
+
+    <label for="imagem">Inserir imagem:</label>
+    <input type="file" id="imagem" accept="image/*" />
+
+    <label for="alternativas">Alternativas (separar por linha):</label>
+    <textarea id="alternativas" rows="4" placeholder="Ex: A) ...&#10;B) ...&#10;C) ..."></textarea>
+
+    <label for="resposta">Resposta discursiva:</label>
+    <textarea id="resposta" rows="3"></textarea>
+
+    <div class="modal-buttons">
+      <button class="btn btn-cancel" id="btn-cancel">Cancelar</button>
+      <button class="btn" id="btn-salvar">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-nova-mochila">
+  <div class="modal-content">
+    <h3>Criar Nova Mochila</h3>
+    <label for="nome-mochila">Nome da Mochila</label>
+    <input type="text" id="nome-mochila" >
+
+    <label for="tag">Tag:</label>
+    <input type="text" id="tag" placeholder="Ex: Geometria, Ondulatória...">
+
+    <label for="cor">Cor:</label>
+    <input type="color" id="cor" value="#ff0000">
+
+    <div class="modal-buttons">
+      <button class="btn btn-cancel" id="btn-cancel-mochila">Cancelar</button>
+      <button class="btn" id="btn-salvar-mochila">Salvar</button>
+    </div>
+  </div>
+</div>
+<script src="../JS/mochila.js"></script>
+</body>
+</html>

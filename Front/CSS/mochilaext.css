@@ -1,175 +1,235 @@
 /* Estilo geral */
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #ddd;
-  }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ddd;
+}
 
-  /* Container geral com menu lateral e conteúdo */
-  .container {
-    display: flex;
-    height: 100vh;
-  }
+/* Container geral com menu lateral e conteúdo */
+.container {
+  display: flex;
+  height: 100vh;
+}
 
-  /* Menu lateral */
-  .sidebar {
-    background-color: #1f2937; /* cinza escuro azulado */
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-  }
+/* Menu lateral */
+.sidebar {
+  background-color: #1f2937; /* cinza escuro azulado */
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
 
-  .sidebar h2 {
-    color: #3b82f6; /* azul */
-    margin-bottom: 1rem;
-    font-weight: bold;
-  }
+.sidebar.collapsed {
+  width: 60px;
+}
 
-  /* Lista de mochilas */
-  .mochilas-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 1rem;
-  }
+.sidebar h2 {
+  color: #3b82f6; /* azul */
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
 
-  .mochila-item {
-    padding: 0.7rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-    background: #374151;
-    transition: background-color 0.3s;
-  }
+.sidebar.collapsed h2,
+.sidebar.collapsed .mochilas-list div,
+.sidebar.collapsed .btn-new-mochila {
+  display: none; /* Esconde textos e lista, deixa só ícones (se tiver) */
+}
 
-  .mochila-item:hover, .mochila-item.active {
-    background-color: #3b82f6;
-    color: #fff;
-  }
+/* Lista de mochilas */
+.mochilas-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
 
-  /* Botão criar nova mochila */
-  .btn-new-mochila {
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    padding: 0.7rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    align-self: flex-end;
-    transition: background-color 0.3s;
-  }
+.mochila-item {
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  background: #374151;
+  transition: background-color 0.3s;
+}
 
-  .btn-new-mochila:hover {
-    background-color: #2563eb;
-  }
+.mochila-item:hover, .mochila-item.active {
+  background-color: #3b82f6;
+  color: #fff;
+}
 
-  /* Área da mochila: bloco de notas com questões */
-  .mochila-area {
-    flex-grow: 1;
-    background-color: #181a1f;
-    padding: 1.5rem;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-  }
+/* Botão criar nova mochila - botão principal */
+.btn-new-mochila {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  align-self: flex-end;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .mochila-header {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
+.btn-new-mochila:hover {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  
+  transform: translateY(-2px);
+}
 
-  .btn {
-    background-color: #3b82f6;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
-  }
+.btn-new-mochila:active {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  
+  transform: translateY(0);
+}
 
-  .btn:hover {
-    background-color: #2563eb;
-  }
+/* Área da mochila: bloco de notas com questões */
+.mochila-area {
+  flex-grow: 1;
+  background-color: #181a1f;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
 
-  /* Questões no formato bloco de notas */
-  .questao {
-    background-color: #2d2f36;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    white-space: pre-wrap;
-    color: #ccc;
-  }
+.mochila-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 
-  /* Modal para nova questão */
-  .modal {
-    display: none; /* escondido por padrão */
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
+/* Botões gerais usados nos modais e áreas */
+.btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .modal.active {
-    display: flex;
-  }
+.btn:hover {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  
+  transform: translateY(-2px);
+}
 
-  .modal-content {
-    background:#23272a;
-    border-radius: 10px;
-    padding: 1.5rem;
-    width: 400px;
-    color: #ddd;
-  }
+.btn:active {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  
+  transform: translateY(0);
+}
 
-  .modal-content h3 {
-    margin-top: 0;
-    color: #3b82f6;
-  }
+/* Botão cancelar com estilo neutro */
+.btn-cancel {
+  background: #444c56;
+  color: #ddd;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
 
-  .modal-content label {
-    display: block;
-    margin-top: 1rem;
-    font-weight: 600;
-  }
+.btn-cancel:hover {
+  background-color: #5a6574;
+  transform: translateY(-1px);
+}
 
-  .modal-content textarea,
-  .modal-content input[type="text"],
-  .modal-content input[type="file"] {
-    width: 100%;
-    margin-top: 0.3rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: none;
-    background: #333842;
-    color: #eee;
-    resize: vertical;
-  }
+.btn-cancel:active {
+  background-color: #3b4252;
+  transform: translateY(0);
+}
 
-  .modal-content input[type="file"] {
-    padding: 0.2rem;
-  }
+/* Questões no formato bloco de notas */
+.questao {
+  background-color: #2d2f36;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  color: #ccc;
+}
 
-  .modal-content .alternativas {
-    margin-top: 0.3rem;
-  }
+/* Modal para nova questão e mochila */
+.modal {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .modal-buttons {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-  }
+.modal.active {
+  display: flex;
+}
 
-  .btn-cancel {
-    background: #555;
-  }
+.modal-content {
+  background:#23272a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 400px;
+  color: #ddd;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #3b82f6;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.modal-content textarea,
+.modal-content input[type="text"],
+.modal-content input[type="file"],
+.modal-content input[type="color"] {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background: #333842;
+  color: #eee;
+  resize: vertical;
+}
+
+.modal-content input[type="file"] {
+  padding: 0.2rem;
+}
+
+.modal-content .alternativas {
+  margin-top: 0.3rem;
+}
+
+.modal-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+#btn-toggle-sidebar {
+  background: linear-gradient(135deg, hsl(217, 91%, 60%), #2563eb);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+}
+

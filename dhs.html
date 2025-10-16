@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teste Modal Mochila</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #ddd;
+    margin: 0;
+    padding: 2rem;
+  }
+  button {
+    background-color: #3b82f6;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:hover {
+    background-color: #2563eb;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .modal.active {
+    display: flex;
+  }
+  .modal-content {
+    background: #23272a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 400px;
+    color: #ddd;
+  }
+  .modal-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  .btn-cancel {
+    background: #555;
+  }
+</style>
+</head>
+<body>
+
+<button id="btn-nova-mochila">Criar Nova Mochila</button>
+
+<div class="modal" id="modal-nova-mochila">
+  <div class="modal-content">
+    <h3>Criar Nova Mochila</h3>
+    <label for="nome-mochila">Nome da Mochila</label>
+    <input type="text" id="nome-mochila" >
+
+    <label for="tag">Tag:</label>
+    <input type="text" id="tag" placeholder="Ex: Geometria, Ondulatória...">
+
+    <label for="cor">Cor:</label>
+    <input type="color" id="cor" value="#ff0000">
+
+    <div class="modal-buttons">
+      <button class="btn btn-cancel" id="btn-cancel-mochila">Cancelar</button>
+      <button class="btn" id="btn-salvar-mochila">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modalMochila = document.getElementById('modal-nova-mochila');
+  const btnNovaMochila = document.getElementById('btn-nova-mochila');
+  const btnCancelarMochila = document.getElementById('btn-cancel-mochila');
+  const btnSalvarMochila = document.getElementById('btn-salvar-mochila');
+
+  btnNovaMochila.addEventListener('click', () => {
+    modalMochila.classList.add('active');
+  });
+
+  btnCancelarMochila.addEventListener('click', () => {
+    modalMochila.classList.remove('active');
+  });
+
+  btnSalvarMochila.addEventListener('click', () => {
+    alert('Salvar mochila: ' + document.getElementById('nome-mochila').value);
+    modalMochila.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
